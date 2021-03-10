@@ -1,6 +1,6 @@
 import React from "react";
 
-function Card({ filterCoins }) {
+function List({ filterCoins }) {
   console.log(filterCoins);
   return (
     <div>
@@ -29,4 +29,4 @@ function Card({ filterCoins }) {
   );
 }
 
-export default Card;
+export default List;
