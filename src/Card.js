@@ -1,9 +1,10 @@
 import React from "react";
+import "./Styling/Card.css";
 
 function Card({ filterCoins }) {
   console.log(filterCoins);
   return (
-    <div>
+    <div className="card-container">
       {filterCoins.map((item) => {
         const {
           id,
@@ -14,14 +15,16 @@ function Card({ filterCoins }) {
           price_change_percentage_1h_in_currency,
         } = item;
         return (
-          <div key={id}>
+          <div key={id} className="card">
             <h3>{name}</h3>
-            <img src={image} alt={name} />
-            <ul>
-              <li>£{current_price}</li>
-              <li>{market_cap_rank}</li>
-              <li>{price_change_percentage_1h_in_currency.toFixed(2)}%</li>
-            </ul>
+            <div className="card-content">
+              <img src={image} alt={name} />
+              <ul>
+                <li>£{current_price}</li>
+                <li>{market_cap_rank}</li>
+                <li>{price_change_percentage_1h_in_currency.toFixed(2)}%</li>
+              </ul>
+            </div>
           </div>
         );
       })}
