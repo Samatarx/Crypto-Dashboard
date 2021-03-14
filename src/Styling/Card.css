@@ -4,8 +4,30 @@
   box-sizing: border-box;
 }
 
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(150px,1fr));
+  grid-gap: 2px ;
+  grid-column-gap: 0px;
+  padding: 10px;
+}
+
+
 .card {
-  border: 1px red solid;
+  width: 150px;
+  margin: 0;
+  padding: 0;
+  border-radius: 10px ;
+}
+
+.card-red {
+  background-color: rgb(255, 164, 164);
+  border: 1px #eee solid;
+}
+
+.card-green {
+  background-color: rgb(203, 255, 203);
+  border: 1px #eee solid;
 }
 
 .card-content {

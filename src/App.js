@@ -2,39 +2,49 @@ import React, { useEffect, useState } from "react";
 import "./Styling/App.css";
 import List from "./List";
 import Card from "./Card";
-import {FaRedo} from 'react-icons/fa'
+import { FaRedo } from "react-icons/fa";
 
 const url =
-  "https://api.coingecko.com/api/v3/coins/markets?vs_currency=gbp&order=market_cap_desc&per_page=50&page=1&sparkline=false&price_change_percentage=1h%2C24h%2C7d";
+  "https://api.coingecko.com/api/v3/coins/markets?vs_currency=gbp&order=market_cap_desc&per_page=10&page=1&sparkline=false&price_change_percentage=1h%2C24h%2C7d";
 
 function App() {
   const [coins, setCoins] = useState([]);
   const [input, setInput] = useState("");
   const [view, setView] = useState(true);
-  const [refresh, setRefresh] = useState(false)
+  const [refresh, setRefresh] = useState(false);
 
   const fetchdata = async () => {
     try {
       const response = await fetch(url);
       const data = await response.json();
       setCoins(data);
-      setRefresh(false)
+      setRefresh(false);
     } catch {
       console.log("error");
     }
   };
 
   useEffect(() => {
-    fetchdata();
+    fetchdata()
   }, [refresh]);
 
   const handleChange = (e) => {
     setInput(e.target.value);
   };
 
-  const filterCoins = coins.filter((coin) =>
-    coin.name.toLowerCase().includes(input.toLowerCase())
+  const filterCoins = coins.filter(
+    (coin) =>
+      coin.symbol.toLowerCase().includes(input.toLowerCase()) ||
+      coin.name.toLowerCase().includes(input.toLowerCase())
   );
+
+  // const lastUpdated = () => {
+  //   const time = filterCoins[0].last_updated.slice(11,16)
+  //   return time
+  // }
+
+  
+
 
   return (
     <main className="App">
@@ -48,7 +58,9 @@ function App() {
             onChange={handleChange}
           />
         </form>
-        <button onClick={()=>setRefresh(true)} ><FaRedo/></button>
+        <button onClick={() => setRefresh(true)}>
+          <FaRedo />
+        </button>
       </div>
       <button className="view-switch" onClick={() => setView(!view)}>
         {view ? "card" : "list"}
