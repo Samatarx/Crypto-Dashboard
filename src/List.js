@@ -25,7 +25,6 @@ function List({ filterCoins }) {
             name,
             image,
             current_price,
-            market_cap_rank,
             price_change_percentage_1h_in_currency,
             price_change_percentage_7d_in_currency,
             price_change_percentage_24h,
@@ -44,7 +43,7 @@ function List({ filterCoins }) {
                     £
                     {current_price < 1
                       ? current_price.toFixed(3)
-                      : current_price}
+                      : current_price.toFixed(2)}
                   </p>
                   <p
                     className={`${

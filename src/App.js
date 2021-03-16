@@ -38,11 +38,6 @@ function App() {
       coin.name.toLowerCase().includes(input.toLowerCase())
   );
 
-  // const lastUpdated = () => {
-  //   const time = filterCoins[0].last_updated.slice(11,16)
-  //   return time
-  // }
-
   return (
     <main className="App">
       <div className="coin-search">

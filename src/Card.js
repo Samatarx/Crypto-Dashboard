@@ -10,7 +10,6 @@ function Card({ filterCoins }) {
           name,
           image,
           current_price,
-          market_cap_rank,
           price_change_percentage_1h_in_currency,
           symbol,
         } = item;
