@@ -10,6 +10,7 @@
   grid-gap: 2px ;
   grid-column-gap: 0px;
   padding: 50px;
+  width: 90vw;
 }
 
 
@@ -21,13 +22,13 @@
 }
 
 .card-red {
-  background-color: rgb(255, 164, 164);
-  border: 1px #eee solid;
+  background-color: rgb(255, 0, 0);
+ 
 }
 
 .card-green {
-  background-color: rgb(128, 255, 128);
-  border: 1px #eee solid;
+  background-color: rgb(0, 173, 0);
+
 }
 
 .card-content {
@@ -40,6 +41,10 @@
 .card-content img {
     width: 50px;
     height: 50px;
+}
+
+.card-symbol {
+  text-transform: uppercase;
 }
 
 .card-content ul {

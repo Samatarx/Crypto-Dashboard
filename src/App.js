@@ -43,16 +43,11 @@ function App() {
   //   return time
   // }
 
-  const sortCoins = () => {
-    const {price_change_percentage_1h_in_currency} = filterCoins
-    console.log(filterCoins.sort())
-  }
-
-
   return (
     <main className="App">
       <div className="coin-search">
         <h1 className="coin-text">Search for Crypto</h1>
+        <div className="coin-buttons">
         <form>
           <input
             type="text"
@@ -64,9 +59,7 @@ function App() {
         <button onClick={() => setRefresh(true)}>
           <FaRedo />
         </button>
-        <button onClick={() => sortCoins()}>
-          Sort
-        </button>
+        </div>
       </div>
       <button className="view-switch" onClick={() => setView(!view)}>
         {view ? "card" : "list"}
