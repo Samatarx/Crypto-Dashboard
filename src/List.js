@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { FaSort } from "react-icons/fa";
 import "./Styling/List.css";
 
 function List({ filterCoins, setRefresh }) {
@@ -8,10 +9,10 @@ function List({ filterCoins, setRefresh }) {
   const sortPrice = (field) => {
     let sortedPrices = sorted.sort((a, b) => {
       if (a[field] < b[field]) {
-        return order ? -1 : 1;
+        return order ? 1 : -1;
       }
       if (a[field] > b[field]) {
-        return order ? 1 : -1;
+        return order ? -1 : 1;
       }
 
       return 0;
@@ -19,7 +20,6 @@ function List({ filterCoins, setRefresh }) {
 
     setOrder(!order);
     setSorted(sortedPrices);
-    console.log(sortedPrices);
     setRefresh(true);
   };
 
@@ -37,6 +37,7 @@ function List({ filterCoins, setRefresh }) {
               onClick={() => sortPrice("current_price")}
             >
               Current Price
+              <FaSort/>
             </p>
             <p
               className="coin-1h"
@@ -45,12 +46,14 @@ function List({ filterCoins, setRefresh }) {
               }
             >
               1h Price Change
+              <FaSort/>
             </p>
             <p
               className="coin-24h"
               onClick={() => sortPrice("price_change_percentage_24h")}
             >
               24h Price Change
+              <FaSort/>
             </p>
             <p
               className="coin-7d"
@@ -59,6 +62,7 @@ function List({ filterCoins, setRefresh }) {
               }
             >
               7d Price Change
+              <FaSort/>
             </p>
           </div>
         </div>
