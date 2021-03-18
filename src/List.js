@@ -3,59 +3,25 @@ import "./Styling/List.css";
 
 function List({ filterCoins, setRefresh }) {
   const [sorted, setSorted] = useState(filterCoins);
-  const [order, setOrder] = useState(true)
+  const [order, setOrder] = useState(true);
 
   const sortPrice = (field) => {
-    
     let sortedPrices = sorted.sort((a, b) => {
       if (a[field] < b[field]) {
-        return -1;
+        return order ? -1 : 1;
       }
-       if (a[field] > b[field]) {
-        return 1;
+      if (a[field] > b[field]) {
+        return order ? 1 : -1;
       }
 
       return 0;
     });
-    // let sortedPrices =  sorted.sort((a,b) => {
-    //     const x = a[field]
-    //     const y = b[field]
-    //     return (order? x>y: x<y)
-    //   } )
-      setOrder(false)
+
+    setOrder(!order);
     setSorted(sortedPrices);
     console.log(sortedPrices);
     setRefresh(true);
   };
-
-  // if (order){
-  //   sorted.reverse()
-  //   console.log(sorted)
- 
-  // }
-
- 
-  // console.log(filterCoins[0].current_price)
-
-  // var newCoins = filterCoins.map(el => Object.keys(el).map((key) => [el[key]]))
-
-  // var test = newCoins.map((item) => item[26])
-
-  // console.log(test);
-
-  // const [sortType, setSortType] = useState(true)
-
-  // const onSort = sortType => {
-  //   setSortType(!sortType)
-  // }
-
-  // const sorted = filterCoins.sort((a,b) => {
-  //   const {current_price} = filterCoins
-  //   const isReveresed = (sortType)? 1 : -1
-  //   return isReveresed * a.current_price.localeCompare(b.current_price)
-  // })
-
-  // console.log(sorted)
 
   return (
     <div className="list-container">
