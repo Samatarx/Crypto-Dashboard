@@ -2,6 +2,9 @@ import React from "react";
 import "./Styling/Card.css";
 
 function Card({ filterCoins }) {
+
+  console.log(filterCoins)
+
   return (
     <div className="card-container">
       {filterCoins.map((item) => {

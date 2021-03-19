@@ -45,14 +45,14 @@ function List({ filterCoins, setRefresh }) {
                 sortPrice("price_change_percentage_1h_in_currency")
               }
             >
-              1h Price Change
+              1h
               <FaSort/>
             </p>
             <p
               className="coin-24h"
               onClick={() => sortPrice("price_change_percentage_24h")}
             >
-              24h Price Change
+              24h
               <FaSort/>
             </p>
             <p
@@ -61,7 +61,7 @@ function List({ filterCoins, setRefresh }) {
                 sortPrice("price_change_percentage_7d_in_currency")
               }
             >
-              7d Price Change
+              7d
               <FaSort/>
             </p>
           </div>

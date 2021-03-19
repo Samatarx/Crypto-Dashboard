@@ -74,14 +74,17 @@
 }
 
 .coin-price {
-    width: 75px;
+    width: 100px;
     text-align: left;
 }
 
 
 .coin-1h, .coin-24h, .coin-7d {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width:120px;
-    text-align: right;
+    text-align: center;
 }
 
 .coin-info .top {
