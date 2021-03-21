@@ -13,7 +13,7 @@ function App() {
   const [input, setInput] = useState("");
   const [view, setView] = useState(true);
   const [refresh, setRefresh] = useState(true);
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(true);
 
   const fetchdata = async () => {
     try {
@@ -21,7 +21,7 @@ function App() {
       const data = await response.json();
       setRefresh(false);
       setCoins(data);
-      setLoading(false)
+      setLoading(false);
     } catch {
       console.log("error");
     }
@@ -47,33 +47,34 @@ function App() {
   );
 
   if (loading) {
-    return <Loader type='Rings' color='#d10000' className='loader' />
-  } 
+    return <Loader type="Rings" color="#d10000" className="loader" />;
+  }
 
   return (
     <main className="App">
       <h1 className="coin-text">Cryptocurrency Dashboard</h1>
       <div className="coin-search">
-        
-        <button className="btn-refresh" onClick={() => setRefresh(true)}>
-          <FaRedo />
-        </button>
         <button className="view-switch" onClick={() => setView(!view)}>
           {view ? "card" : "list"}
         </button>
-        {view ? (
-          <h1> </h1>
-        ) : (
-          <form>
-            <input
-              type="text"
-              placeholder="search for a coin"
-              className="input"
-              onChange={handleChange}
-              onSubmit={stopRender}
-            />
-          </form>
-        )}
+        <div className="search-refresh">
+          {view ? (
+            <h1> </h1>
+          ) : (
+            <form>
+              <input
+                type="text"
+                placeholder="search for a coin"
+                className="input"
+                onChange={handleChange}
+                onSubmit={stopRender}
+              />
+            </form>
+          )}
+          <button className="btn-refresh" onClick={() => setRefresh(true)}>
+            <FaRedo />
+          </button>
+        </div>
       </div>
       {filterCoins.length > 0 ? (
         view ? (
@@ -82,7 +83,7 @@ function App() {
           <Card filterCoins={filterCoins} />
         )
       ) : (
-        <h3 className='error-search' >Please try again</h3>
+        <h3 className="error-search">Please try again</h3>
       )}
     </main>
   );

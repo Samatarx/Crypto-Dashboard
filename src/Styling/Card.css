@@ -28,8 +28,7 @@
 }
 
 .card:nth-last-child(-n+4):hover{
-  width: 100vw;
-}
+height: 375px;}
 
 .card-red {
   background-color: rgb(255, 0, 0);

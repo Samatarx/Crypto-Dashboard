@@ -55,7 +55,7 @@ function List({ filterCoins, setRefresh, inputRef }) {
         </form>
       </div>
       <div className="list-container">
-        <div className="list-item top">
+        <div className="list-item">
           <div className="item-content">
             <div className="name-img">
               <h3>Coin</h3>
