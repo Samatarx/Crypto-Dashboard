@@ -2,8 +2,7 @@ import React from "react";
 import "./Styling/Card.css";
 
 function Card({ filterCoins }) {
-
-  console.log(filterCoins)
+  console.log(filterCoins);
 
   return (
     <div className="card-container">
@@ -29,11 +28,13 @@ function Card({ filterCoins }) {
             <div className="card-content">
               <div className="img-smn">
                 <img src={image} alt={name} />
-                <h4 className='card-symbol' >{symbol}</h4>
+                <h4 className="card-symbol">{symbol}</h4>
               </div>
               <ul>
-                
-                <li>£{current_price < 1 ? current_price.toFixed(3) : current_price}</li>
+                <li>
+                  £
+                  {current_price < 1 ? current_price.toFixed(3) : current_price}
+                </li>
                 <li>{price_change_percentage_1h_in_currency.toFixed(2)}%</li>
               </ul>
             </div>

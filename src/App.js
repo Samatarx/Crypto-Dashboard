@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./Styling/App.css";
 import List from "./List";
 import Card from "./Card";
+import Loader from "react-loader-spinner";
 import { FaRedo } from "react-icons/fa";
 
 const url =
@@ -11,25 +12,32 @@ function App() {
   const [coins, setCoins] = useState([]);
   const [input, setInput] = useState("");
   const [view, setView] = useState(true);
-  const [refresh, setRefresh] = useState(false);
+  const [refresh, setRefresh] = useState(true);
+  const [loading, setLoading] = useState(true)
 
   const fetchdata = async () => {
     try {
       const response = await fetch(url);
       const data = await response.json();
-      setCoins(data);
       setRefresh(false);
+      setCoins(data);
+      setLoading(false)
     } catch {
       console.log("error");
     }
   };
 
   useEffect(() => {
-    fetchdata()
+    fetchdata();
   }, [refresh]);
 
   const handleChange = (e) => {
+    e.preventDefault();
     setInput(e.target.value);
+  };
+
+  const stopRender = (e) => {
+    e.preventDefault();
   };
 
   const filterCoins = coins.filter(
@@ -38,27 +46,35 @@ function App() {
       coin.name.toLowerCase().includes(input.toLowerCase())
   );
 
+  if (loading) {
+    return <Loader type='Rings' color='#d10000' className='loader' />
+  } 
+
   return (
     <main className="App">
+      <h1 className="coin-text">Cryptocurrency Dashboard</h1>
       <div className="coin-search">
-        <h1 className="coin-text">Search for Crypto</h1>
-        <div className="coin-buttons">
-        <form>
-          <input
-            type="text"
-            placeholder="search for a coin"
-            className="input"
-            onChange={handleChange}
-          />
-        </form>
-        <button onClick={() => setRefresh(true)}>
+        
+        <button className="btn-refresh" onClick={() => setRefresh(true)}>
           <FaRedo />
         </button>
-        </div>
+        <button className="view-switch" onClick={() => setView(!view)}>
+          {view ? "card" : "list"}
+        </button>
+        {view ? (
+          <h1> </h1>
+        ) : (
+          <form>
+            <input
+              type="text"
+              placeholder="search for a coin"
+              className="input"
+              onChange={handleChange}
+              onSubmit={stopRender}
+            />
+          </form>
+        )}
       </div>
-      <button className="view-switch" onClick={() => setView(!view)}>
-        {view ? "card" : "list"}
-      </button>
       {filterCoins.length > 0 ? (
         view ? (
           <List filterCoins={filterCoins} setRefresh={setRefresh} />
@@ -66,7 +82,7 @@ function App() {
           <Card filterCoins={filterCoins} />
         )
       ) : (
-        <h1>Please try again</h1>
+        <h3 className='error-search' >Please try again</h3>
       )}
     </main>
   );
