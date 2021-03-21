@@ -58,7 +58,6 @@ body {
 }
 
 .input {
-  order: 3;
   background: #fff;
   border: none;
   border-radius: 10px;
@@ -66,6 +65,7 @@ body {
   width: 300px;
 }
 
-.view-switch {
-  order: 2;
+.sub-heading {
+  display: flex;
+  flex-direction: row;
 }

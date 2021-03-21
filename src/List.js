@@ -39,7 +39,7 @@ function List({ filterCoins, setRefresh, inputRef }) {
       coin.name.toLowerCase().includes(input.toLowerCase())
   );
 
-    console.log(filteredCoins)
+  console.log(filteredCoins);
 
   return (
     <div className="List">
@@ -99,7 +99,7 @@ function List({ filterCoins, setRefresh, inputRef }) {
         </div>
         <div className="list-row">
           {filteredCoins.length <= 0 ? (
-            <h3 className='error-search' >Please repeat search</h3>
+            <h3 className="error-search">Please repeat search</h3>
           ) : (
             filteredCoins.map((item) => {
               const {

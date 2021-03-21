@@ -4,7 +4,6 @@
   box-sizing: border-box;
 }
 
-
 .card-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -27,8 +26,9 @@
   width: auto;
 }
 
-.card:nth-last-child(-n+4):hover{
-height: 375px;}
+.card:nth-last-child(-n + 4):hover {
+  height: 375px;
+}
 
 .card-red {
   background-color: rgb(255, 0, 0);

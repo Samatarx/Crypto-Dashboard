@@ -53,10 +53,13 @@ function App() {
   return (
     <main className="App">
       <h1 className="coin-text">Cryptocurrency Dashboard</h1>
-      <div className="coin-search">
+      <article className="sub-heading">
+        <h2>View type:</h2>
         <button className="view-switch" onClick={() => setView(!view)}>
           {view ? "card" : "list"}
         </button>
+      </article>
+      <div className="coin-search">
         <div className="search-refresh">
           {view ? (
             <h1> </h1>
