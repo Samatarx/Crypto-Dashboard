@@ -9,7 +9,6 @@
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 2px;
   grid-column-gap: 0px;
-  padding: 50px;
   max-width: 2000px;
 }
 
@@ -21,14 +20,14 @@
   /* transition: 10s linear; */
 }
 
-.card:hover {
+/* .card:hover {
   grid-row: span 3;
   width: auto;
 }
 
 .card:nth-last-child(-n + 4):hover {
   height: 375px;
-}
+} */
 
 .card-red {
   background-color: rgb(255, 0, 0);
@@ -54,7 +53,7 @@
 }
 
 .card-content ul {
-  text-align: justify;
+  text-align: center;
 }
 
 .card-content ul li {

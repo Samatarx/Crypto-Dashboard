@@ -32,20 +32,41 @@ body {
   padding: 40px 20px;
 }
 
-.coin-search {
+.sub-heading {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
+  width: 250px;
+}
+
+.view-switch {
+  border: none;
+  background: white;
+  border-radius:4px;
+  padding: 0 10px;
+  height: 25px;
+  margin: 0 20px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.view-switch:hover {
+  background: red;
+  color: #fff;
 }
 
 .search-refresh {
   display: flex;
   justify-content: center;
-  margin: 20px;
+  flex-direction: column;
+  margin: 40px;
 }
 
 .btn-refresh {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+ 
   margin: 10px;
   background: none;
   color: #fff;

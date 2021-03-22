@@ -6,6 +6,10 @@
   box-sizing: border-box;
 }
 
+.List {
+  margin-top: 40px;
+}
+
 .list-container {
   display: flex;
   position: relative;
@@ -13,7 +17,7 @@
   align-items: center;
   justify-content: center;
   color: #fff;
-  margin-top: 30px;
+  margin-top: 40px;
 }
 
 .list-item {
@@ -87,4 +91,8 @@
 .coin-info .top {
   margin: 10px;
   font-size: 5px;
+}
+
+.input {
+  padding: 10px;
 }

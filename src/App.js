@@ -3,7 +3,6 @@ import "./Styling/App.css";
 import List from "./List";
 import Card from "./Card";
 import Loader from "react-loader-spinner";
-import { FaRedo } from "react-icons/fa";
 
 const url =
   "https://api.coingecko.com/api/v3/coins/markets?vs_currency=gbp&order=market_cap_desc&per_page=100&page=1&sparkline=true&price_change_percentage=1h%2C24h%2C7d";
@@ -38,6 +37,7 @@ function App() {
 
   const stopRender = (e) => {
     e.preventDefault();
+    
   };
 
   const filterCoins = coins.filter(
@@ -56,14 +56,15 @@ function App() {
       <article className="sub-heading">
         <h2>View type:</h2>
         <button className="view-switch" onClick={() => setView(!view)}>
-          {view ? "card" : "list"}
+          {view ? "list" : "card"}
         </button>
       </article>
-      <div className="coin-search">
-        <div className="search-refresh">
-          {view ? (
-            <h1> </h1>
-          ) : (
+     
+        {view ? (
+          <h1> </h1>
+        ) : (
+          <div className="search-refresh">
+             <div className="coin-search">
             <form>
               <input
                 type="text"
@@ -73,12 +74,13 @@ function App() {
                 onSubmit={stopRender}
               />
             </form>
-          )}
-          <button className="btn-refresh" onClick={() => setRefresh(true)}>
-            <FaRedo />
-          </button>
-        </div>
-      </div>
+            </div>
+            <button className="btn-refresh" onClick={() => setRefresh(true)}>
+              Refresh 
+            </button>
+          </div>
+        )}
+     
       {filterCoins.length > 0 ? (
         view ? (
           <List filterCoins={filterCoins} setRefresh={setRefresh} />

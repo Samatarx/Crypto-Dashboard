@@ -27,10 +27,13 @@ function List({ filterCoins, setRefresh, inputRef }) {
   const handleChange = (e) => {
     e.preventDefault();
     setInput(e.target.value);
+    e.stopPropagation();
   };
 
   const stopRender = (e) => {
     e.preventDefault();
+    e.stopPropagation();
+    return false
   };
 
   const filteredCoins = sorted.filter(
@@ -49,8 +52,8 @@ function List({ filterCoins, setRefresh, inputRef }) {
             type="text"
             placeholder="search for a coin"
             className="input"
-            onChange={handleChange}
-            onSubmit={stopRender}
+            onChange={(e)=>handleChange(e)}
+            onSubmit={(e)=>stopRender(e)}
           />
         </form>
       </div>
