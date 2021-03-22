@@ -69,7 +69,7 @@ function List({ filterCoins, setRefresh, inputRef }) {
                 className="coin-price"
                 onClick={() => sortPrice("current_price")}
               >
-                Current Price
+                Price
                 <FaSort />
               </p>
               <p

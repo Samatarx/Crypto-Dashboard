@@ -3,6 +3,7 @@ import "./Styling/App.css";
 import List from "./List";
 import Card from "./Card";
 import Loader from "react-loader-spinner";
+import {FaAngleDoubleUp} from 'react-icons/fa'
 
 const url =
   "https://api.coingecko.com/api/v3/coins/markets?vs_currency=gbp&order=market_cap_desc&per_page=100&page=1&sparkline=true&price_change_percentage=1h%2C24h%2C7d";
@@ -52,7 +53,7 @@ function App() {
 
   return (
     <main className="App">
-      <h1 className="coin-text">Cryptocurrency Dashboard</h1>
+      <h1 className="coin-text" id='#top'>Cryptocurrency Dashboard</h1>
       <article className="sub-heading">
         <h2>View type:</h2>
         <button className="view-switch" onClick={() => setView(!view)}>
@@ -90,6 +91,7 @@ function App() {
       ) : (
         <h3 className="error-search">Please try again</h3>
       )}
+      <a href="#top" ><FaAngleDoubleUp/></a>
     </main>
   );
 }
