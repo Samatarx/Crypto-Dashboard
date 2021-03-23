@@ -32,16 +32,16 @@ function App() {
   }, [refresh]);
 
   const handleChange = (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-    e.stopImmediatePropagation()
+    // e.preventDefault();
+    // e.stopPropagation();
+    // e.stopImmediatePropagation()
     setInput(e.target.value);
   };
 
   const stopRender = (e) => {
     e.preventDefault();
-    e.stopPropagation();
-    e.stopImmediatePropagation()
+    // e.stopPropagation();
+    // e.stopImmediatePropagation()
   };
 
   const filterCoins = coins.filter(
@@ -71,13 +71,13 @@ function App() {
       ) : (
         <div className="search-refresh">
           <div className="coin-search">
-            <form>
+            <form onSubmit={stopRender}>
               <input
                 type="text"
                 placeholder="search for a coin"
                 className="input"
                 onChange={handleChange}
-                onSubmit={stopRender}
+                
               />
             </form>
           </div>
