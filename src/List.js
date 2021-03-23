@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { FaSort } from "react-icons/fa";
 import "./Styling/List.css";
 
-function List({ filterCoins, setRefresh, inputRef }) {
+function List({ filterCoins, setRefresh }) {
   const [sorted, setSorted] = useState(filterCoins);
   const [order, setOrder] = useState(true);
   const [input, setInput] = useState("");
@@ -15,7 +15,6 @@ function List({ filterCoins, setRefresh, inputRef }) {
       if (a[field] > b[field]) {
         return order ? -1 : 1;
       }
-
       return 0;
     });
 
@@ -28,11 +27,13 @@ function List({ filterCoins, setRefresh, inputRef }) {
     e.preventDefault();
     setInput(e.target.value);
     e.stopPropagation();
+    e.stopImmediatePropagation();
   };
 
   const stopRender = (e) => {
     e.preventDefault();
     e.stopPropagation();
+    e.stopImmediatePropagation();
     return false;
   };
 
