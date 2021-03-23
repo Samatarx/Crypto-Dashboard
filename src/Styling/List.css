@@ -75,6 +75,8 @@
 
 .coin-price {
   width: 100px;
+  display: flex;
+  align-items: center;
   text-align: left;
 }
 
@@ -95,4 +97,5 @@
 
 .input {
   padding: 10px;
+  outline: none;
 }

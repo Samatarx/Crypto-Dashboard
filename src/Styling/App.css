@@ -50,11 +50,12 @@ body {
   height: 25px;
   margin: 0 20px;
   text-transform: uppercase;
+  outline: none;
   cursor: pointer;
 }
 
 .view-switch:hover {
-  background: red;
+  background: blue;
   color: #fff;
 }
 
@@ -70,7 +71,6 @@ body {
   align-items: center;
   text-align: center;
   justify-content: center;
-
   margin: 10px;
   background: none;
   color: #fff;
@@ -79,7 +79,7 @@ body {
 }
 
 .btn-refresh:hover {
-  color: green;
+  color: blue;
 }
 
 .input {
@@ -88,6 +88,7 @@ body {
   border-radius: 10px;
   height: 40px;
   width: 300px;
+  outline: none;
 }
 
 .sub-heading {
@@ -95,16 +96,16 @@ body {
   flex-direction: row;
 }
 
-.top {
+.up {
   margin:20px;
   color: white;
   height: 30px;
 }
 
-.top:visited {
+.up:visited {
   color: #fff;
 }
 
-.top:hover {
-  color: red;
+.up:hover {
+  color: blue;
 }

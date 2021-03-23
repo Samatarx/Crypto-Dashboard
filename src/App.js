@@ -91,7 +91,7 @@ function App() {
       ) : (
         <h3 className="error-search">Please try again</h3>
       )}
-      <a href="#top" ><FaAngleDoubleUp className='top' /></a>
+      <a href="#top" ><FaAngleDoubleUp className='up' /></a>
     </main>
   );
 }
