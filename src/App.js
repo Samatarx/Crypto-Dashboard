@@ -32,16 +32,11 @@ function App() {
   }, [refresh]);
 
   const handleChange = (e) => {
-    // e.preventDefault();
-    // e.stopPropagation();
-    // e.stopImmediatePropagation()
     setInput(e.target.value);
   };
 
   const stopRender = (e) => {
     e.preventDefault();
-    // e.stopPropagation();
-    // e.stopImmediatePropagation()
   };
 
   const filterCoins = coins.filter(
