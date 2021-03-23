@@ -42,8 +42,6 @@ function List({ filterCoins, setRefresh, inputRef }) {
       coin.name.toLowerCase().includes(input.toLowerCase())
   );
 
-  console.log(filteredCoins);
-
   return (
     <div className="List">
       <div className="coin-search">
