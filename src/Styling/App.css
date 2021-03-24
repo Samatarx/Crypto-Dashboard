@@ -110,3 +110,46 @@ body {
 .up:hover {
   color: blue;
 }
+
+.small-screen {
+  display: flex;
+  flex-direction: column;
+  width: 90vw;
+  height: 95vh;
+  background-color: rgb(229, 229, 247);
+  color: black;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+
+.small-screen p {
+  margin: 30px;
+}
+
+@keyframes turnPhone {
+  from {transform: rotate(0deg)}
+  to {transform: rotate(90deg) }
+}
+
+.small-screen .icon{
+  margin-top: 20px ;
+  font-size: 100px;
+  animation: 2s turnPhone infinite;
+}
+
+@media (max-width:600px){
+  .card-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width:567px){
+  .small-screen {
+    display: flex;
+  }
+
+  .coin-text, .sub-heading,.search-refresh, .List, .up {
+    display: none;
+  }
+}

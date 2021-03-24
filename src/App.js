@@ -3,7 +3,7 @@ import "./Styling/App.css";
 import List from "./List";
 import Card from "./Card";
 import Loader from "react-loader-spinner";
-import { FaAngleDoubleUp } from "react-icons/fa";
+import { FaAngleDoubleUp, FaMobileAlt } from "react-icons/fa";
 
 const url =
   "https://api.coingecko.com/api/v3/coins/markets?vs_currency=gbp&order=market_cap_desc&per_page=100&page=1&sparkline=true&price_change_percentage=1h%2C24h%2C7d";
@@ -51,6 +51,13 @@ function App() {
 
   return (
     <main className="App">
+      <div className='small-screen'>
+        <p>Welcome top 100 Cryptocurrencies</p>
+        <h2>
+          Please Rotate Screen
+        </h2>
+        <FaMobileAlt className='icon' />
+      </div>
       <h1 className="coin-text" id="#top">
       Top 100 Cryptocurrencies
       </h1>
