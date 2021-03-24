@@ -52,9 +52,9 @@ function App() {
   return (
     <main className="App">
       <div className='small-screen'>
-        <p>Welcome top 100 Cryptocurrencies</p>
+        <p>Welcome to Top 100 Cryptocurrencies</p>
         <h2>
-          Please Rotate Screen
+          Please Rotate Your Screen
         </h2>
         <FaMobileAlt className='icon' />
       </div>
