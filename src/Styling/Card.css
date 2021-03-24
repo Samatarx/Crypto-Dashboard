@@ -71,3 +71,9 @@
     grid-template-columns: 1fr 1fr;
   }
 }
+
+@media (max-width:567px){
+  .card-container{
+    display: none;
+  }
+}

@@ -152,7 +152,7 @@ body {
     display: flex;
   }
 
-  .coin-text, .sub-heading,.search-refresh, .List, .up, .card-container {
+  .coin-text, .sub-heading,.search-refresh, .List, .up {
     display: none;
   }
 }
