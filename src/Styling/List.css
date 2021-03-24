@@ -100,23 +100,44 @@
   outline: none;
 }
 
-@media (max-width:700px){
+
+
+@media (max-width:900px){
+
   .list-item {
-    width: 500px;
+    width: 700px;
     font-size: small;
   }
 
-  .coin-7d {
+  .coin-7d, {
     display: none;
   }
 
   .coin-info {
     justify-content: center;
-    width: 250px;
+    width: 450px;
     padding-left: 30px;
+  }
+}
+
+@media (max-width:720px){
+  .list-item {
+    width: 500px;
+    font-size: small;
+  }
+
+  .coin-7d, .coin-1y{
+    display: none;
+  }
+
+  .coin-info {
+    justify-content: center;
+    width: 300px;
+    padding-left: 20px;
+    text-align: left;
   }
 
   .name-img {
-    width: 200px;
+    width: 150px;
   }
 }
