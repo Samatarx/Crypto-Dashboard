@@ -31,7 +31,8 @@ function Card({ filterCoins }) {
                 <h4 className="card-symbol">{symbol}</h4>
               </div>
               <ul>
-                <li>Rank {market_cap_rank}</li>
+                <li>Market Cap</li>
+                <li>Rank: {market_cap_rank}</li>
                 <li>
                   £
                   {current_price < 1 ? current_price.toFixed(3) : current_price}

@@ -77,6 +77,7 @@ body {
   color: #fff;
   outline: none;
   border: none;
+  cursor: pointer;
 }
 
 .btn-refresh:hover {
@@ -127,7 +128,7 @@ body {
 
 .small-screen p {
   margin: 30px;
-  font-size: xx-small;
+  font-size: 12px;
 }
 
 @keyframes turnPhone {

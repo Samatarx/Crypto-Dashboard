@@ -25,7 +25,7 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  width: 700px;
+  width: 850px;
   height: 50px;
   border-bottom: 1px solid rgba(255, 255, 0, 0.7);
 }
@@ -40,7 +40,7 @@
   display: flex;
   justify-content: space-between;
   text-align: left;
-  width: 200px;
+  width: 175px;
   margin-right: 20px;
   font-size: 12px;
 }
@@ -48,10 +48,10 @@
 .coin-info {
   display: flex;
   text-align: right;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   padding-left: 20px;
-  width: 400px;
+  width: 575px;
 }
 
 .percent-green {
@@ -74,7 +74,7 @@
 }
 
 .coin-price {
-  width: 100px;
+  width: 150px;
   display: flex;
   align-items: center;
   text-align: left;
@@ -82,12 +82,12 @@
 
 .coin-1h,
 .coin-24h,
-.coin-7d {
+.coin-7d, .coin-30d, .coin-1y {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 120px;
-  text-align: center;
+  width: 150px;
+  text-align: left;
 }
 
 .coin-info .top {

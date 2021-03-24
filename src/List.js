@@ -89,6 +89,24 @@ function List({ filterCoins, setRefresh }) {
                 7d
                 <FaSort />
               </p>
+              <p
+                className="coin-30d"
+                onClick={() =>
+                  sortPrice("price_change_percentage_30d_in_currency")
+                }
+              >
+                30d
+                <FaSort />
+              </p>
+              <p
+                className="coin-1y"
+                onClick={() =>
+                  sortPrice("price_change_percentage_1y_in_currency")
+                }
+              >
+                1y
+                <FaSort />
+              </p>
             </div>
           </div>
         </div>
@@ -105,6 +123,8 @@ function List({ filterCoins, setRefresh }) {
                 price_change_percentage_1h_in_currency,
                 price_change_percentage_7d_in_currency,
                 price_change_percentage_24h,
+                price_change_percentage_30d_in_currency,
+                price_change_percentage_1y_in_currency,
                 symbol,
               } = item;
               return (
@@ -150,6 +170,26 @@ function List({ filterCoins, setRefresh }) {
                         }`}
                       >
                         {price_change_percentage_7d_in_currency.toFixed(2)}%
+                      </p>
+                      <p
+                        className={`${
+                          price_change_percentage_30d_in_currency > 0
+                            ? "coin-30d percent-green"
+                            : "coin-30d percent-red"
+                        }`}
+                      >
+                        {price_change_percentage_30d_in_currency.toFixed(2)}%
+                      </p>
+                      <p
+                        className={`${
+                          price_change_percentage_1y_in_currency > 0
+                            ? "coin-1y percent-green"
+                            : "coin-1y percent-red"
+                        }`}
+                      >
+                        {price_change_percentage_1y_in_currency
+                          ? price_change_percentage_1y_in_currency.toFixed(2) + '%'
+                          : "n/a"}
                       </p>
                     </div>
                   </div>

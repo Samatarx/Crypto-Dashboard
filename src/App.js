@@ -6,7 +6,7 @@ import Loader from "react-loader-spinner";
 import { FaAngleDoubleUp, FaMobileAlt } from "react-icons/fa";
 
 const url =
-  "https://api.coingecko.com/api/v3/coins/markets?vs_currency=gbp&order=market_cap_desc&per_page=100&page=1&sparkline=true&price_change_percentage=1h%2C24h%2C7d";
+  "https://api.coingecko.com/api/v3/coins/markets?vs_currency=gbp&order=market_cap_desc&per_page=100&page=1&sparkline=false&price_change_percentage=1h%2C%2024h%2C7d%2C30d%2C1y";
 
 function App() {
   const [coins, setCoins] = useState([]);
@@ -21,6 +21,7 @@ function App() {
       const data = await response.json();
       setRefresh(false);
       setCoins(data);
+      console.log(data)
       setLoading(false);
     } catch {
       console.log("error");
