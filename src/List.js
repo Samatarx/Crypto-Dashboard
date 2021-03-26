@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { FaSort } from "react-icons/fa";
 import "./Styling/List.css";
 
-function List({ filterCoins, setRefresh }) {
+function List({ filterCoins, setRefresh,mode }) {
   const [sorted, setSorted] = useState(filterCoins);
   const [order, setOrder] = useState(true);
   const [input, setInput] = useState("");
@@ -44,13 +44,13 @@ function List({ filterCoins, setRefresh }) {
           <input
             type="text"
             placeholder="search for a coin"
-            className="input"
+            className={`input-${mode}`}
             onChange={(e) => handleChange(e)}
           />
         </form>
       </div>
       <div className="list-container">
-        <div className="list-item">
+        <div className={`list-item-${mode}`}>
           <div className="item-content">
             <div className="name-img">
               <h3>Coin</h3>
@@ -128,7 +128,7 @@ function List({ filterCoins, setRefresh }) {
                 symbol,
               } = item;
               return (
-                <div key={id} className="list-item">
+                <div key={id} className={`list-item-${mode}`}>
                   <div className="item-content">
                     <div className="name-img">
                       <h3>{name}</h3>

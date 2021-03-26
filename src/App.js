@@ -3,7 +3,7 @@ import "./Styling/App.css";
 import List from "./List";
 import Card from "./Card";
 import Loader from "react-loader-spinner";
-import { FaAngleDoubleUp, FaMobileAlt } from "react-icons/fa";
+import { FaAngleDoubleUp, FaMobileAlt, FaSun, FaMoon } from "react-icons/fa";
 
 const url =
   "https://api.coingecko.com/api/v3/coins/markets?vs_currency=gbp&order=market_cap_desc&per_page=100&page=1&sparkline=false&price_change_percentage=1h%2C%2024h%2C7d%2C30d%2C1y";
@@ -14,6 +14,7 @@ function App() {
   const [view, setView] = useState(true);
   const [refresh, setRefresh] = useState(true);
   const [loading, setLoading] = useState(true);
+  const [mode, setMode] = useState("dark");
 
   const fetchdata = async () => {
     try {
@@ -21,7 +22,6 @@ function App() {
       const data = await response.json();
       setRefresh(false);
       setCoins(data);
-      console.log(data)
       setLoading(false);
     } catch {
       console.log("error");
@@ -50,21 +50,37 @@ function App() {
     return <Loader type="Rings" color="#d10000" className="loader" />;
   }
 
+  const modeSwitch = () => {
+    if (mode === 'light'){
+      setMode("dark")
+      document.body.style.background = 'black'
+    } else if (mode === 'dark') {
+      setMode("light")
+      document.body.style.background = 'rgb(240, 240, 240)'
+    }
+  };
+
   return (
-    <main className="App">
-      <div className='small-screen'>
+    <main className={`App-${mode}`}>
+      <div className={`small-screen-${mode}`}>
         <p>Welcome to Top 100 Cryptocurrencies</p>
-        <h2>
-          Please Rotate Your Screen
-        </h2>
-        <FaMobileAlt className='icon' />
+        <h2>Please Rotate Your Screen</h2>
+        <FaMobileAlt className="icon" />
       </div>
-      <h1 className="coin-text" id="#top">
-      Top 100 Cryptocurrencies
+      <div className="mode">
+        {mode === 'dark' ?  <FaSun onClick={modeSwitch} /> : <FaMoon onClick={modeSwitch} />}
+      
+        
+      </div>
+      <h1 className="coin-text" id="#top" onClick={modeSwitch} >
+        Top 100 Cryptocurrencies
       </h1>
       <article className="sub-heading">
         <h2>View type:</h2>
-        <button className="view-switch" onClick={() => setView(!view)}>
+        <button
+          className={`view-switch-${mode}`}
+          onClick={() => setView(!view)}
+        >
           {view ? "list" : "card"}
         </button>
       </article>
@@ -78,13 +94,15 @@ function App() {
               <input
                 type="text"
                 placeholder="search for a coin"
-                className="input"
+                className={`input-${mode}`}
                 onChange={handleChange}
-                
               />
             </form>
           </div>
-          <button className="btn-refresh" onClick={() => setRefresh(true)}>
+          <button
+            className={`btn-refresh-${mode}`}
+            onClick={() => setRefresh(true)}
+          >
             Refresh
           </button>
         </div>
@@ -92,7 +110,7 @@ function App() {
 
       {filterCoins.length > 0 ? (
         view ? (
-          <List filterCoins={filterCoins} setRefresh={setRefresh} />
+          <List filterCoins={filterCoins} setRefresh={setRefresh} mode={mode} />
         ) : (
           <Card filterCoins={filterCoins} />
         )
@@ -100,7 +118,7 @@ function App() {
         <h3 className="error-search">Please try again</h3>
       )}
       <a href="#top">
-        <FaAngleDoubleUp className="up" />
+        <FaAngleDoubleUp className={`up-${mode}`} />
       </a>
     </main>
   );
