@@ -43,6 +43,7 @@ body {
   align-items: center;
   text-align: center;
   padding: 20px;
+  overflow-x: hidden;
 }
 
 .App-dark {
@@ -54,6 +55,7 @@ body {
   align-items: center;
   text-align: center;
   padding: 20px;
+  overflow-x: hidden;
 }
 
 .coin-text {
