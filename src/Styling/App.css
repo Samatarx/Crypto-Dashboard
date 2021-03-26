@@ -222,7 +222,7 @@ body {
   overflow: hidden;
 }
 
-.small-screen p {
+.small-screen-dark p, .small-screen-light p {
   margin: 30px;
   font-size: 12px;
 }
