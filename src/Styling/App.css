@@ -194,6 +194,7 @@ body {
   justify-content: flex-end;
   width: 100vw;
   margin-right: 75px;
+  cursor: pointer;
 }
 
 .small-screen-dark {
