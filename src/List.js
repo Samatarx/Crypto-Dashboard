@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { FaSort } from "react-icons/fa";
 import "./Styling/List.css";
 
-function List({ filterCoins, setRefresh,mode }) {
+function List({ filterCoins, setRefresh, mode }) {
   const [sorted, setSorted] = useState(filterCoins);
   const [order, setOrder] = useState(true);
   const [input, setInput] = useState("");
@@ -188,7 +188,8 @@ function List({ filterCoins, setRefresh,mode }) {
                         }`}
                       >
                         {price_change_percentage_1y_in_currency
-                          ? price_change_percentage_1y_in_currency.toFixed(2) + '%'
+                          ? price_change_percentage_1y_in_currency.toFixed(2) +
+                            "%"
                           : "n/a"}
                       </p>
                     </div>

@@ -51,12 +51,12 @@ function App() {
   }
 
   const modeSwitch = () => {
-    if (mode === 'light'){
-      setMode("dark")
-      document.body.style.background = 'black'
-    } else if (mode === 'dark') {
-      setMode("light")
-      document.body.style.background = 'rgb(240, 240, 240)'
+    if (mode === "light") {
+      setMode("dark");
+      document.body.style.background = "black";
+    } else if (mode === "dark") {
+      setMode("light");
+      document.body.style.background = "rgb(240, 240, 240)";
     }
   };
 
@@ -68,11 +68,13 @@ function App() {
         <FaMobileAlt className="icon" />
       </div>
       <div className="mode">
-        {mode === 'dark' ?  <FaSun onClick={modeSwitch} /> : <FaMoon onClick={modeSwitch} />}
-      
-        
+        {mode === "dark" ? (
+          <FaSun onClick={modeSwitch} />
+        ) : (
+          <FaMoon onClick={modeSwitch} />
+        )}
       </div>
-      <h1 className="coin-text" id="#top" onClick={modeSwitch} >
+      <h1 className="coin-text" id="#top">
         Top 100 Cryptocurrencies
       </h1>
       <article className="sub-heading">

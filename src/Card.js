@@ -2,8 +2,6 @@ import React from "react";
 import "./Styling/Card.css";
 
 function Card({ filterCoins }) {
-  console.log(filterCoins);
-
   return (
     <div className="card-container">
       {filterCoins.map((item) => {
@@ -13,7 +11,8 @@ function Card({ filterCoins }) {
           image,
           current_price,
           price_change_percentage_1h_in_currency,
-          symbol, market_cap_rank,
+          symbol,
+          market_cap_rank,
         } = item;
         return (
           <div
@@ -37,7 +36,9 @@ function Card({ filterCoins }) {
                   £
                   {current_price < 1 ? current_price.toFixed(3) : current_price}
                 </li>
-                <li>1h: {price_change_percentage_1h_in_currency.toFixed(2)}%</li>
+                <li>
+                  1h: {price_change_percentage_1h_in_currency.toFixed(2)}%
+                </li>
               </ul>
             </div>
           </div>
