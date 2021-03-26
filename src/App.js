@@ -119,7 +119,7 @@ function App() {
       ) : (
         <h3 className="error-search">Please try again</h3>
       )}
-      <a href="#top">
+      <a href="#top" aria-label='back to top' >
         <FaAngleDoubleUp className={`up-${mode}`} />
       </a>
     </main>
