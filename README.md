@@ -51,7 +51,9 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-Cryptocurrencies and decentralised finance (DeFi) are taking over the world and redefining what money is. I wanted to create a dashboard which displays the current price of a coin and more importantly the price changes of the coin. I used the JAMstack approach to build this project, I found an amazing free API from Coingecko and I leveraged my React.js skills to build an elegant dashboard.
+Cryptocurrencies and decentralised finance (DeFi) are taking over the world and redefining what money is. I wanted to create a dashboard which displays the current price of a coin and more importantly the price changes of the coin.
+
+I used the JAMstack approach to build this project, I found an amazing free API from Coingecko and I leveraged my React.js skills to build an elegant dashboard.
 
 
 ### Built With
