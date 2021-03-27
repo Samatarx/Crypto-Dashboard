@@ -15,7 +15,7 @@
     <a href="https://github.com/samatarx/Crypto-Dashboard"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/samatarx/Crypto-Dashboard">View Demo</a>
+    <a href="https://top100cryptocurrencies.netlify.app/" target='#'>View Demo</a>
     ·
     <a href="https://github.com/samatarx/Crypto-Dashboard/issues">Report Bug</a>
     ·
@@ -44,8 +44,6 @@
     </li>
     <li><a href="#usage">Usage</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgements">Acknowledgements</a></li>
   </ol>
@@ -111,41 +109,19 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 
 See the [open issues](https://github.com/samatarx/Crypto-Dashboard/issues) for a list of proposed features (and known issues).
 
-
-
-<!-- CONTRIBUTING -->
-## Contributing
-
-Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-
-
-<!-- LICENSE -->
-## License
-
-Distributed under the MIT License. See `LICENSE` for more information.
-
-
-
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email
+Samatar Xasan - [@samatarcodes](https://twitter.com/samatarcodes) - email
 
-Project Link: [https://github.com/samatarx/repo_name](https://github.com/samatarx/Crypto-Dashboard)
+Project Link: [https://github.com/samatarx/crypto-dashboard](https://github.com/samatarx/Crypto-Dashboard)
 
 
 
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
 
-* []()
+* [https://www.coingecko.com/en](coingecko.com)
 * []()
 * []()
 
