@@ -12,8 +12,6 @@
   <p align="center">
     Top 100 cryptocurrencies displayed list and card format using React.js
     <br />
-    <a href="https://github.com/samatarx/Crypto-Dashboard"><strong>Explore the docs »</strong></a>
-    <br />
     <br />
     <a href="https://top100cryptocurrencies.netlify.app/" target='#'>View Demo</a>
     ·
@@ -53,8 +51,6 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
 
 Here's a blank template to get started:
 **To avoid retyping too much info. Do a search and replace with your text editor for the following:**
@@ -121,7 +117,7 @@ Project Link: [https://github.com/samatarx/crypto-dashboard](https://github.com/
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
 
-* [https://www.coingecko.com/en](coingecko.com)
+* [coingecko.com](https://www.coingecko.com/en)
 * []()
 * []()
 
