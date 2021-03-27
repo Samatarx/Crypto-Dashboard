@@ -61,7 +61,7 @@ function List({ filterCoins, setRefresh, mode }) {
                 className="coin-price"
                 onClick={() => sortPrice("current_price")}
               >
-                Price
+                Value
                 <FaSort />
               </p>
               <p
@@ -188,7 +188,7 @@ function List({ filterCoins, setRefresh, mode }) {
                         }`}
                       >
                         {price_change_percentage_1y_in_currency
-                          ? price_change_percentage_1y_in_currency.toFixed(2) +
+                          ? price_change_percentage_1y_in_currency.toFixed(0) +
                             "%"
                           : "n/a"}
                       </p>
