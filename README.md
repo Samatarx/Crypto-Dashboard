@@ -117,7 +117,7 @@ This is an example of how to list things you need to use the software and how to
 * Used .map(), .filter(), .sort() and .includes() to manipulate the JSON file recieved from the API
 
 <!-- Future Improvements -->
-## Future work
+## Future_work
 
 * Display tickers/price graphs using Chart.js or equivalent
 * Allow users to compare
