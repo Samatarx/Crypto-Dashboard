@@ -42,7 +42,7 @@
     </li>
     <li><a href="#features">Features</a></li>
     <li><a href="#react">React</a></li>
-    <li><a href="#futurework">Future Work</a></li>
+    <li><a href="#future_work">Future Work</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgements">Acknowledgements</a></li>
   </ol>
