@@ -40,8 +40,8 @@
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#features">Features</a></li>
+    <li><a href="#react">React</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgements">Acknowledgements</a></li>
   </ol>
@@ -97,16 +97,32 @@ This is an example of how to list things you need to use the software and how to
 <!-- USAGE EXAMPLES -->
 ## Features
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+* Displays cryptocurrency information/data about current values and price changes from 1 day to 1 year
+* Users can search through the data using the input bar
+* Data can be viewed in list format and in card format
+* Created a button to allow users to return to the top of the page effortlessly
+* Made a CSS animation informing users to rotate the screen 
+* Web app is responsive to all screen sizes
 
-_For more examples, please refer to the [Documentation](https://example.com)_
 
 
 
 <!-- ROADMAP -->
-## Roadmap
+## React
 
-See the [open issues](https://github.com/samatarx/Crypto-Dashboard/issues) for a list of proposed features (and known issues).
+* Implemented the use of React hooks through the project
+* Used useEffect to call the data in an asynchronous way 
+* Allow users to switch between card and list view using useState properties and terniary operators
+* Used .map(), .filter(), .sort() and .includes() to manipulate the JSON file recieved from the API
+
+<!-- Future Improvements -->
+## Future work
+
+* Display tickers/price graphs using Chart.js or equivalent
+* Allow users to compare
+* Make the mobile rotate optional
+* Create tests for the project
+
 
 <!-- CONTACT -->
 ## Contact
