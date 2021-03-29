@@ -10,7 +10,7 @@
   <h3 align="center">Cryptocurrency Dashboard</h3>
 
   <p align="center">
-    Top 100 cryptocurrencies displayed list and card format using React.js
+    Top 100 cryptocurrencies displayed in list and card format using React.js
     <br />
     <br />
     <a href="https://top100cryptocurrencies.netlify.app/" target='#'>View Demo</a>
@@ -42,6 +42,7 @@
     </li>
     <li><a href="#features">Features</a></li>
     <li><a href="#react">React</a></li>
+    <li><a href="#futurework">Future Work</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgements">Acknowledgements</a></li>
   </ol>
