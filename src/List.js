@@ -151,7 +151,10 @@ function List({ filterCoins, setRefresh, mode }) {
                             : "coin-1h percent-red"
                         }`}
                       >
-                        {price_change_percentage_1h_in_currency.toFixed(2)}%
+                        {price_change_percentage_1h_in_currency
+                          ? price_change_percentage_1h_in_currency.toFixed(2) +
+                            "%"
+                          : "n/a"}%
                       </p>
                       <p
                         className={`${
@@ -160,7 +163,10 @@ function List({ filterCoins, setRefresh, mode }) {
                             : "coin-24h percent-red"
                         }`}
                       >
-                        {price_change_percentage_24h.toFixed(2)}%
+                        {price_change_percentage_24h
+                          ? price_change_percentage_24h.toFixed(2) +
+                            "%"
+                          : "n/a"}%
                       </p>
                       <p
                         className={`${
