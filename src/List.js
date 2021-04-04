@@ -164,21 +164,27 @@ function List({ filterCoins, setRefresh, mode }) {
                       </p>
                       <p
                         className={`${
-                          price_change_percentage_7d_in_currency > 0
+                          (price_change_percentage_7d_in_currency > 0
                             ? "coin-7d percent-green"
-                            : "coin-7d percent-red"
+                            : "coin-7d percent-red") 
                         }`}
                       >
-                        {price_change_percentage_7d_in_currency.toFixed(2)}%
+                        {price_change_percentage_7d_in_currency
+                          ? price_change_percentage_7d_in_currency.toFixed(2) +
+                            "%"
+                          : "n/a"}
                       </p>
                       <p
                         className={`${
-                          price_change_percentage_30d_in_currency > 0
+                         (price_change_percentage_30d_in_currency > 0
                             ? "coin-30d percent-green"
-                            : "coin-30d percent-red"
+                            : "coin-30d percent-red") 
                         }`}
                       >
-                        {price_change_percentage_30d_in_currency.toFixed(2)}%
+                        {price_change_percentage_30d_in_currency
+                          ? price_change_percentage_30d_in_currency.toFixed(2) +
+                            "%"
+                          : "n/a"}
                       </p>
                       <p
                         className={`${
