@@ -124,6 +124,7 @@
   .list-item-light {
     width: 700px;
     font-size: small;
+    
   }
 
   .coin-7d {
@@ -142,6 +143,7 @@
   .list-item-light {
     width: 500px;
     font-size: small;
+    height: 65px;
   }
 
   .coin-7d,
@@ -158,5 +160,6 @@
 
   .name-img {
     width: 150px;
+    margin: 0px;
   }
 }
