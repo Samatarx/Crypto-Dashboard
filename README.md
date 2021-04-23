@@ -3,7 +3,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/samatarx/Crypto-Dashboard">
-    <img src='./public/header.png' >
+    <img src='./public/header.PNG' >
   </a>
 
   <h3 align="center">Cryptocurrency Dashboard</h3>
@@ -61,11 +61,11 @@ I used the JAMstack approach to build this project, I found an amazing free API 
 - Made a CSS animation informing users to rotate the screen
 - Web app is responsive to all screen sizes
 
-![](./public/card.png)
+![Card](./public/Card.PNG)
 
 - Card view in Dark Mode
 
-![](./public/list.png)
+![](./public/List.PNG)
 
 - List View in Light Mode
 <!-- React -->
@@ -83,7 +83,7 @@ I used the JAMstack approach to build this project, I found an amazing free API 
 
 Recieved an average score of 99.5 across all Google Lighthouse metrics
 
-![](./public/seo.png)
+![Light house](./public/seo.PNG)
 
 <!-- Future Improvements -->
 
