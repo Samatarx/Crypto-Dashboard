@@ -23,6 +23,7 @@ function App() {
       setRefresh(false);
       setCoins(data);
       setLoading(false);
+      console.log(data)
     } catch {
       console.log("error");
     }
@@ -75,7 +76,7 @@ function App() {
         )}
       </div>
       <h1 className="coin-text" id="#top">
-        Top 100 Cryptocurrencies
+        Top 100 ATH List
       </h1>
       <article className="sub-heading">
         <h2>View type:</h2>

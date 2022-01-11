@@ -23,6 +23,15 @@ function List({ filterCoins, setRefresh, mode }) {
     setRefresh(true);
   };
 
+  // const sortDate = () => {
+  //  let sortedDates = sorted.sort((a,b) => {
+  //     // Turn your strings into dates, and then subtract them
+  //     // to get a value that is either negative, positive, or zero.
+  //     return new Date(b.date) - new Date(a.date);
+  //   })
+  //   setSorted(sortedDates)
+  // }
+
   const handleChange = (e) => {
     setInput(e.target.value);
   };
@@ -36,6 +45,14 @@ function List({ filterCoins, setRefresh, mode }) {
       coin.symbol.toLowerCase().includes(input.toLowerCase()) ||
       coin.name.toLowerCase().includes(input.toLowerCase())
   );
+
+  const findMonthOfATH = (date) => {
+    return date.substring(0, 10).split('-').reverse().join('/')
+  }
+
+  // const priceChangeFor100 = (highest, current) => {
+  //   (highest/current * 100).toFixed(0)
+  // }
 
   return (
     <div className="List">
@@ -57,6 +74,13 @@ function List({ filterCoins, setRefresh, mode }) {
             </div>
             <p className="coin-symbol">Code</p>
             <div className="coin-info top">
+            <p
+                className="coin-price"
+                onClick={() => sortPrice("market_cap_rank")}
+              >
+                Rank
+                <FaSort />
+              </p>
               <p
                 className="coin-price"
                 onClick={() => sortPrice("current_price")}
@@ -65,47 +89,30 @@ function List({ filterCoins, setRefresh, mode }) {
                 <FaSort />
               </p>
               <p
-                className="coin-1h"
+                className="coin-price"
                 onClick={() =>
-                  sortPrice("price_change_percentage_1h_in_currency")
+                  sortPrice("ath")
                 }
               >
-                1h
+                ATH
                 <FaSort />
               </p>
               <p
                 className="coin-24h"
-                onClick={() => sortPrice("price_change_percentage_24h")}
+                onClick={() => sortPrice("ath_change_percentage")}
               >
-                24h
+                ATH%
                 <FaSort />
               </p>
               <p
-                className="coin-7d"
-                onClick={() =>
-                  sortPrice("price_change_percentage_7d_in_currency")
-                }
+                className="coin-24h"
               >
-                7d
-                <FaSort />
+                ATH Date
               </p>
               <p
-                className="coin-30d"
-                onClick={() =>
-                  sortPrice("price_change_percentage_30d_in_currency")
-                }
+                className="coin-24h"
               >
-                30d
-                <FaSort />
-              </p>
-              <p
-                className="coin-1y"
-                onClick={() =>
-                  sortPrice("price_change_percentage_1y_in_currency")
-                }
-              >
-                1y
-                <FaSort />
+                £100
               </p>
             </div>
           </div>
@@ -119,12 +126,11 @@ function List({ filterCoins, setRefresh, mode }) {
                 id,
                 name,
                 image,
+                market_cap_rank,
                 current_price,
-                price_change_percentage_1h_in_currency,
-                price_change_percentage_7d_in_currency,
-                price_change_percentage_24h,
-                price_change_percentage_30d_in_currency,
-                price_change_percentage_1y_in_currency,
+                ath,
+                ath_date,
+                ath_change_percentage,
                 symbol,
               } = item;
               return (
@@ -137,72 +143,47 @@ function List({ filterCoins, setRefresh, mode }) {
                     <p className="coin-symbol">{symbol.toUpperCase()}</p>
                     <div className="coin-info">
                       <p className="coin-price">
+                        {market_cap_rank}
+                      </p>
+                      <p className="coin-price">
                         £
                         {current_price < 1
                           ? current_price.toFixed(3)
                           : current_price > 10000
                           ? current_price.toFixed(0)
-                          : current_price.toFixed(2)}
+                          : current_price.toFixed(1)}
                       </p>
                       <p
-                        className={`${
-                          price_change_percentage_1h_in_currency > 0
-                            ? "coin-1h percent-green"
-                            : "coin-1h percent-red"
-                        }`}
+                        className="coin-price"
                       >
-                        {price_change_percentage_1h_in_currency
-                          ? price_change_percentage_1h_in_currency.toFixed(2) +
-                            "%"
-                          : "n/a"}
+                        £
+                        {ath < 1
+                          ? ath.toFixed(3)
+                          : ath > 10000
+                          ? ath.toFixed(0)
+                          : ath.toFixed(2)}
                       </p>
                       <p
                         className={`${
-                          price_change_percentage_24h > 0
+                          ath_change_percentage > 0
                             ? "coin-24h percent-green"
                             : "coin-24h percent-red"
                         }`}
                       >
-                        {price_change_percentage_24h
-                          ? price_change_percentage_24h.toFixed(2) + "%"
+                        {ath_change_percentage
+                          ? ath_change_percentage.toFixed(2) + "%"
                           : "n/a"}
                       </p>
                       <p
-                        className={`${
-                          price_change_percentage_7d_in_currency > 0
-                            ? "coin-7d percent-green"
-                            : "coin-7d percent-red"
-                        }`}
+                        className="coin-24h"
                       >
-                        {price_change_percentage_7d_in_currency
-                          ? price_change_percentage_7d_in_currency.toFixed(2) +
-                            "%"
-                          : "n/a"}
-                      </p>
+                        {findMonthOfATH(ath_date)}
+                      </p> 
                       <p
-                        className={`${
-                          price_change_percentage_30d_in_currency > 0
-                            ? "coin-30d percent-green"
-                            : "coin-30d percent-red"
-                        }`}
+                        className="coin-24h"
                       >
-                        {price_change_percentage_30d_in_currency
-                          ? price_change_percentage_30d_in_currency.toFixed(2) +
-                            "%"
-                          : "n/a"}
-                      </p>
-                      <p
-                        className={`${
-                          price_change_percentage_1y_in_currency > 0
-                            ? "coin-1y percent-green"
-                            : "coin-1y percent-red"
-                        }`}
-                      >
-                        {price_change_percentage_1y_in_currency
-                          ? price_change_percentage_1y_in_currency.toFixed(0) +
-                            "%"
-                          : "n/a"}
-                      </p>
+                        £{(ath/current_price * 100).toFixed(0)}
+                      </p>      
                     </div>
                   </div>
                 </div>
